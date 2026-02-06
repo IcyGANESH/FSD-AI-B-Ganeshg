@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Soulful Shayar</title>
+    <style>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #faf3e0; /* Warm paper-like background */
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+        nav {
+            background-color: #5d4037;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        nav a {
+            color: #efebe9;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: -apple-system, sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        nav a:hover {
+            color: #d7ccc8;
+            text-decoration: underline;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e0e0e0;
+            min-height: 400px;
+        }
+        h1 {
+            color: #3e2723;
+            text-align: center;
+            border-bottom: 1px solid #d7ccc8;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .shayari-card {
+            background: #fff8f0;
+            border-left: 5px solid #8d6e63;
+            padding: 20px;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        .shayari-card .author {
+            display: block;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+            font-style: normal;
+        }
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .feedback-form input, .feedback-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .button {
+            display: inline-block;
+            background: #5d4037;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .button:hover {
+            background: #4e342e;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 20px;
+            color: #8d6e63;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+        }
+        /* Utility for hiding/showing sections */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+        .active-section {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a onclick="router('home')">Home</a>
+        <a onclick="router('love')">Love Shayari</a>
+        <a onclick="router('sad')">Sad Shayari</a>
+        <a onclick="router('submit')">Submit Poetry</a>
+        <a onclick="router('feedback')">Feedback</a>
+    </nav>
+    <main id="app-container">
+        <!-- Content injects here via JS -->
+    </main>
+    <footer>
+        &copy; 2024 The Soulful Shayar | Hosted on GitHub Pages
+    </footer>
+
+    <script>
+        // Content Data
+        const pages = {
+            home: `
+                <h1>Welcome to The Soulful Shayar</h1>
+                <p style="text-align: center; font-size: 1.2rem;">
+                    "Words are but pictures of our thoughts."
+                </p>
+                <p>Welcome to a sanctuary for poetry lovers. Explore our collection of heartfelt Shayaris, 
+                or contribute your own verses to our growing community.</p>
+                
+                <div class="shayari-card">
+                    "Hazaaron khwahishen aisi ke har khwahish pe dam nikle,<br>
+                    Bohat niklay mere armaan, lekin phir bhi kam nikle."
+                    <span class="author">- Mirza Ghalib</span>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button onclick="router('love')" class="button">Read Love Shayari</button>
+                    <button onclick="router('sad')" class="button" style="background: #795548;">Read Sad Shayari</button>
+                </div>
+            `,
+            love: `
+                <h1>Love Shayari</h1>
+                <p>Verses that speak the language of the heart.</p>
+                
+                <div class="shayari-card">
+                    "Tere ishq mein humne kya kya na dekha,<br>
+                    Kabhi khud ko khoya, kabhi tujhko paaya."
+                    <span class="author">- Unknown</span>
+                </div>
+
+                <div class="shayari-card">
+                    "Mohabbat mein nahi hai farq jeene aur marne ka,<br>
+                    Usi ko dekh kar jeete hain jis kaafir pe dam nikle."
+                    <span class="author">- Mirza Ghalib</span>
+                </div>
+
+                 <div class="shayari-card">
+                    "Kuch toh baat hai teri fitrat mein aye dost,<br>
+                    Warna tujhe yaad karne ki khata hum baar baar na karte."
+                    <span class="author">- Anonymous</span>
+                </div>
+            `,
+            sad: `
+                <h1>Sad Shayari</h1>
+                <p>Melancholy echoes of a broken heart.</p>
+                
+                <div class="shayari-card">
+                    "Dil hi to hai na sang-o-khisht dard se bhar na aaye kyun,<br>
+                    Royenge hum hazaar baar koi humein sataye kyun."
+                    <span class="author">- Mirza Ghalib</span>
+                </div>
+
+                <div class="shayari-card">
+                    "Main akela hi chala tha janib-e-manzil magar,<br>
+                    Log saath aate gaye aur karwaan banta gaya."
+                    <span class="author">- Majrooh Sultanpuri</span>
+                </div>
+            `,
+            submit: `
+                <h1>Submit Your Poetry</h1>
+                <div id="submit-content">
+                    <p>Share your own words with the world.</p>
+                    <form onsubmit="handleFormSubmit(event, 'poem')" class="feedback-form">
+                        <label>Your Name/Pen Name:</label>
+                        <input type="text" required placeholder="e.g. Rahat Indori">
+                        
+                        <label>Your Shayari:</label>
+                        <textarea rows="5" required placeholder="Write your verses here..."></textarea>
+                        
+                        <button type="submit" class="button">Submit Poem</button>
+                    </form>
+                </div>
+            `,
+            feedback: `
+                <h1>Feedback</h1>
+                <div id="feedback-content">
+                    <p>We would love to hear your thoughts on our collection.</p>
+                    <form onsubmit="handleFormSubmit(event, 'feedback')" class="feedback-form">
+                        <label>Your Name:</label>
+                        <input type="text" required placeholder="John Doe">
+                        
+                        <label>Your Email:</label>
+                        <input type="email" required placeholder="john@example.com">
+                        
+                        <label>Message:</label>
+                        <textarea rows="4" required placeholder="What do you think about the website?"></textarea>
+                        
+                        <button type="submit" class="button">Send Feedback</button>
+                    </form>
+                </div>
+            `
+        };
+
+        // Router Function
+        function router(page) {
+            const container = document.getElementById('app-container');
+            if (pages[page]) {
+                container.innerHTML = pages[page];
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Handle Forms (Mock Server Response)
+        function handleFormSubmit(event, type) {
+            event.preventDefault(); // Stop page reload
+            
+            const containerId = type === 'poem' ? 'submit-content' : 'feedback-content';
+            const container = document.getElementById(containerId);
+            
+            if (type === 'poem') {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <h2 style="color: #4CAF50;">Submission Received!</h2>
+                        <p>Beautiful words! Since this is a static demo, we've "saved" it to the digital ether.</p>
+                        <button onclick="router('submit')" class="button">Submit Another</button>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <h2 style="color: #4CAF50;">Shukriya!</h2>
+                        <p>Your feedback has been received and is appreciated.</p>
+                        <button onclick="router('home')" class="button">Return Home</button>
+                    </div>
+                `;
+            }
+        }
+
+        // Load Home by default
+        router('home');
+    </script>
+</body>
+</html>
