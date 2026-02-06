@@ -12,6 +12,7 @@ Where Words Meet Emotion
 
 [🚀 View Live Demo 🚀](https://soulful-shayar.onrender.com)
 
+https://icyganesh.github.io/FSD-AI-B-Ganeshg/
 
 <br />
 
