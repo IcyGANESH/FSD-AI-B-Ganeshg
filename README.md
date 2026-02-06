@@ -8,13 +8,10 @@ Where Words Meet Emotion
 
 <br />
 
-<!-- Animated Header Image -->
+<!-- Big Deployment Button -->
 
-<img src="[https://www.google.com/search?q=https://media.giphy.com/media/3o7TKrEzvJbsQNtRN6/giphy.gif](https://soulful-shayar.onrender.com)" width="60%" alt="🚀 View Live Demo 🚀" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.5);">
+[🚀 View Live Demo 🚀](https://soulful-shayar.onrender.com)
 
-<br />
-
-(Click above to visit the website)
 
 <br />
 
@@ -76,9 +73,11 @@ git clone [https://github.com/IcyGANESH/FSD-AI-B-Ganeshg.git](https://github.com
 cd FSD-AI-B-Ganeshg
 
 
+
 Start the Server
 
 node index.js
+
 
 
 Explore
@@ -94,15 +93,7 @@ FSD-AI-B-Ganeshg/
 └── 📂 assets/         # The Soul (Images/Static)
 
 
-📸 Sneak Peek
 
-Landing Page
-
-Poetry Section
-
-<img src="https://www.google.com/search?q=https://via.placeholder.com/300x150%3Ftext%3DHome%2BPage%2BPreview" alt="Home Page">
-
-<img src="https://www.google.com/search?q=https://via.placeholder.com/300x150%3Ftext%3DPoetry%2BCard%2BPreview" alt="Poetry Page">
 
 🤝 Contributing
 
