@@ -10,14 +10,9 @@ Where Words Meet Emotion
 
 <!-- Animated Header Image -->
 
-<img src="https://www.google.com/search?q=https://media.giphy.com/media/3o7TKrEzvJbsQNtRN6/giphy.gif" width="60%" alt="Poetry Writing Animation" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.5);">
+<img src="[https://www.google.com/search?q=https://media.giphy.com/media/3o7TKrEzvJbsQNtRN6/giphy.gif](https://soulful-shayar.onrender.com)" width="60%" alt="🚀 View Live Demo 🚀" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.5);">
 
 <br />
-
-<!-- Big Deployment Button -->
-
-🚀 View Live Demo 🚀
-https://soulful-shayar.onrender.com
 
 (Click above to visit the website)
 
